@@ -59,6 +59,9 @@ La información para la maquina virtual que necesitamos está en el archivo Dock
    
     El contenedor será creado con el nombre de *php_hacking*
     y la url del servidor será http://0.0.0.0:80
+    No olvide iniciar el servicio ssh.  
+
+   > docker exec -it php_hacking service ssh start
    
     Si desea saber la ip de la propia maquina virtual donde se ejecuta la aplicación web
     Ejecute:
@@ -71,27 +74,27 @@ La información para la maquina virtual que necesitamos está en el archivo Dock
    
    > docker run -it --rm --network host --name php_hacking sql_injection 
 
-5. **Descifre las contraseñas**
+6. **Descifre las contraseñas**
     Busque las contraseñas en la sección **Mis credenciales** y descifre-las.
    
    - Ya que tiene la contraseña de la maquina virtual, acceda a entrar por ssh. 
    - Deje en la página un mensaje que diga **Página hackeada**.    
 
-6. **Descargue, exporte o copie la base de datos SQLite**
+7. **Descargue, exporte o copie la base de datos SQLite**
    
    - Al final de la página cree una etiqueta <**a**> con el atributo **download** donde el *href* sea la dirección relativa de la base de datos. Por medio del enlace, descargue la base de datos. 
    - Despues de descargar la base de datos, elimine el enlace.
    - Por ultimo, examine los datos que hayan en las tablas y su estructura.
 
-7. **Detener y eliminar el contenedor**
+8. **Detener y eliminar el contenedor**
    
    > docker stop php_hacking
    > docker rm php_hacking
 
-8. **Eliminar imagen**
+9. **Eliminar imagen**
    
    > docker rmi sql_injection
 
-9. **Eliminar imagen php:8.2-cli**
+10. **Eliminar imagen php:8.2-cli**
    
    > docker rmi php:8.2-cli
