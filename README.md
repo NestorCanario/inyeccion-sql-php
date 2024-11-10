@@ -34,7 +34,7 @@ La información para la maquina virtual que necesitamos está en el archivo Dock
 2. **Correr la aplicación con Docker**
     *Requisitos*:
    
-   - Tener instalado [Docker](docker.com)
+   - Tener instalado [Docker](https://www.docker.com/)
    
    - Tener conocimientos basicos de Docker
    
