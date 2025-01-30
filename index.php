@@ -175,7 +175,7 @@ if (!isset($_SESSION["email"])) {
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body d-flex justify-content-between align-items-center">
-                <input type="text" value="<?php echo base64_encode('abc123zxy');?>" class="border-0 text-primary text-center fw-bold outline-none d-inline" readonly style="color:#055160;background: transparent;max-width: 150px;" id="passwd1"> 
+                <input type="text" value="<?php echo base64_encode('abc123zxy');?>" class="border-0 text-primary text-center fw-bold outline-none d-inline" style="color:#055160;background: transparent;max-width: 150px;" id="passwd1"> 
                 <span class="btn border border-light text-secondary position-relative" onclick="Copy('passwd1', 'lottieCheck1')">
                     <small
                         class="d-flex align-items-center text-success bg-white p-1 px-3 fw-bold position-absolute rounded"
@@ -199,7 +199,7 @@ if (!isset($_SESSION["email"])) {
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body d-flex justify-content-between align-items-center">
-                <input type="text" value="<?php echo base64_encode('abc123zxy');?>" class="border-0 text-primary text-center fw-bold outline-none d-inline" readonly style="color:#055160;background: transparent;max-width: 150px;" id="passwd2"> 
+                <input type="text" value="<?php echo base64_encode('abc123zxy');?>" class="border-0 text-primary text-center fw-bold outline-none d-inline" style="color:#055160;background: transparent;max-width: 150px;" id="passwd2"> 
                 <span class="btn border border-light text-secondary position-relative" onclick="Copy('passwd2', 'lottieCheck2')">
                     <small
                         class="d-flex align-items-center text-success bg-white p-1 px-3 fw-bold position-absolute rounded"
@@ -287,6 +287,8 @@ if (!isset($_SESSION["email"])) {
             if ('clipboard' in navigator) {
                 let copyCheck = IconAnimatedLottie(idIconCheck, './assets/json/icon-check.json')
                 await navigator.clipboard.writeText(inputPasswd.innerText);
+                inputPasswd.select()
+                document.execCommand("copy")
                 messageCopy.style.opacity = '1'
                 copyCheck.play()
                 setTimeout(() => {
@@ -307,7 +309,7 @@ if (!isset($_SESSION["email"])) {
                     messageCopy.style.opacity = '0'
                     copyCheck.stop()
                     copyCheck.destroy()
-                }, 1500)
+                }, 1500) 
             }
         }
 
